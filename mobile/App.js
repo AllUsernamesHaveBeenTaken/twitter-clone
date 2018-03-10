@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 
 import { store, client } from './src/store';
 import { colors } from './src/utils/constants';
-import { AppNavigation } from './src/navigations';
+import AppNavigation from './src/navigations';
 
 
 if (UIManager.setLayoutAnimationEnabledExperimental) {
