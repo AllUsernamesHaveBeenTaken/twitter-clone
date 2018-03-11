@@ -13,6 +13,7 @@ export default `
         _id: ID!
         user: String
         email: String!
+        username: String        
         firstname: String
         lastname: String
         avatar: String
@@ -35,7 +36,7 @@ export default `
         _id: ID!
         text: String!
         user: User!
-        favoriteCoun: Int!
+        favoriteCount: Int!
         createdAt: Date!
         updatedAt: Date!
     }

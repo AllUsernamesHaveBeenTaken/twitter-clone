@@ -16,7 +16,7 @@ export default async () => {
         firstname: faker.name.firstName(),
         lastname: faker.name.lastName(),
         email: faker.internet.email(),
-        avatar: `https://randromuser.me/api/women/${i}.jpg`,
+        avatar: `https://randomuser.me/api/portraits/lego/${i}.jpg`,
         password: 'azerty'
       });
 

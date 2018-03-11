@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/Cellar/node/9.7.1/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js add react-navigation-redux-helpers
+  /usr/local/Cellar/node/9.7.1/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js add date-fns
 
 PATH: 
   /Library/Frameworks/Python.framework/Versions/2.7/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Library/Frameworks/Python.framework/Versions/3.5/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Library/Frameworks/Python.framework/Versions/3.5/bin:/usr/local/mysql/bin:/usr/local/mongodb/bin:/usr/local/mongodb/bin
@@ -21,14 +21,19 @@ npm manifest:
     "author": null,
     "private": true,
     "main": "node_modules/expo/AppEntry.js",
+    "scripts": {
+      "debug": "open 'rndebugger://set-debugger-loc?host=localhost&port=19001'"
+    },
     "dependencies": {
       "@appandflow/touchable": "^1.2.2",
       "apollo-client": "1.9.0-0",
       "expo": "^19.0.0",
+      "prop-types": "^15.6.1",
       "react": "16.0.0-alpha.12",
       "react-apollo": "^1.4.8",
       "react-native": "https://github.com/expo/react-native/archive/sdk-19.0.0.tar.gz",
       "react-navigation": "^1.0.0-beta.11",
+      "react-navigation-redux-helpers": "^1.0.3",
       "react-redux": "^5.0.5",
       "redux": "^3.7.2",
       "redux-thunk": "^2.2.0",
