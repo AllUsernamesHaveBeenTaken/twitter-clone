@@ -8,6 +8,7 @@ import HomeScreen from './screens/HomeScreen';
 import ExploreScreen from './screens/ExploreScreen';
 import NotificationsScreen from './screens/NotificationsScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import AuthenticationScreen from './screens/AuthenticationScreen';
 import { colors } from './utils/constants';
 
 const TAB_ICON_SIZE = 20;
@@ -98,12 +99,16 @@ class AppNavigator extends Component {
         state: this.props.nav,
         addListener  
     })
+    if (!this.props.user.isAuthenticated) {
+        return <AuthenticationScreen />
+    }
     return <AppMainNav navigation={nav} />
   }
 }
 
 export default connect(state => ({
     nav: state.nav,
+    user: state.user
 }))(AppNavigator);
 
 export const router = AppMainNav.router;
