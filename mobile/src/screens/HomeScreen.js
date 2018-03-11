@@ -5,7 +5,6 @@ import FeedCard from '../components/FeedCard/FeedCard';
 
 const Root = styled.View`
     flex: 1;
-    background-color: #f2f2f2;
     padding-top: 5px;
 `;
 
