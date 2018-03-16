@@ -12,9 +12,16 @@ export function decodeToken(token) {
 }
 
 export async function requireAuth(user) {
-  const me = await User.findById(user._id);
-  if (!user || !user._id || !me) {
+  if (!user || !user._id) {
     throw new Error('Unauthorized!');
   }
+
+  const me = await User.findById(user._id);
+
+  if (!me) {
+    throw new Error('Unauthorized!');
+  }
+
   return me;
 }
+

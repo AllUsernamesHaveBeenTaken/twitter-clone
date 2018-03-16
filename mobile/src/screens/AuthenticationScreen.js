@@ -74,7 +74,7 @@ class AuthenticationScreen extends Component {
         return (
             <Root>
                 <ButtonSignup onPress={this._onShowSignup}>
-                    <ButtonSignupText>Get Started</ButtonSignupText>
+                    <ButtonSignupText>Sign Up</ButtonSignupText>
                 </ButtonSignup>
                 <BottomTextContainer>
                     <ButtonLogin>
