@@ -23,7 +23,7 @@ export default `
 
     type Me {
         _id: ID!
-        user: String
+        username: String
         email: String!
         firstname: String
         lastname: String
