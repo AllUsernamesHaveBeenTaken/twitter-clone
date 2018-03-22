@@ -8,6 +8,7 @@ import { connectActionSheet } from '@expo/react-native-action-sheet';
 import { logout } from '../../actions/user';
 
 import Loading from '../Loading';
+import HeaderButton from './Button';
 
 const AVATAR_SIZE = 30;
 const AVATAR_RADIUS = AVATAR_SIZE / 2;
@@ -16,15 +17,6 @@ const Avatar = styled.Image`
     height: ${AVATAR_SIZE};
     width: ${AVATAR_SIZE};
     border-radius: ${AVATAR_RADIUS};
-`;
-
-const Button = styled(Touchable).attrs({
-    feedback: 'opacity',
-    hitSlope: {top: 20, botton: 20, right: 20, left: 20}
-})`
-    margin-left: 15;
-    justify-content: center;
-    align-items: center;
 `;
 
 class HeaderAvatar extends Component {
@@ -44,15 +36,15 @@ class HeaderAvatar extends Component {
     render() {
         if (!this.props.info) {
             return (
-                <Button disabled>
+                <HeaderButton side='left' disabled>
                     <Loading size="small" />
-                </Button>
+                </HeaderButton>
             )
         }
         return (
-            <Button onPress={this._onOpenActionSheet}>
+            <HeaderButton side='left' onPress={this._onOpenActionSheet}>
                 <Avatar source={{uri: this.props.info.avatar}} />
-            </Button>
+            </HeaderButton >
         )
     }
 }
