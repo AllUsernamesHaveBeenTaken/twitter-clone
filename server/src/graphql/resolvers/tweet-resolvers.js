@@ -3,7 +3,6 @@ import { requireAuth } from '../../services/auth';
 import { pubsub } from '../../config/pubsub';
 
 import FavoriteTweet from '../../models/FavoriteTweet';
-import { Promise } from 'mongoose';
 
 const TWEET_ADDED = 'tweetAdded';
 
@@ -40,8 +39,6 @@ export default {
       }, []);
 
       return tweetsToSend;
-
-      return Tweet.find({}).sort({ createdAt: -1 });
     } catch (error) {
       throw error;
     }
