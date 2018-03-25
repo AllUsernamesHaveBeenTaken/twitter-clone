@@ -18,7 +18,6 @@ const Root = styled(Touchable).attrs({
     justify-content: center;
     align-items: center;
 `;
-const T = styled.Text``;
 
 const Wrapper = styled.View`
     align-items: center;

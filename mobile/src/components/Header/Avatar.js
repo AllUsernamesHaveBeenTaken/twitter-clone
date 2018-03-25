@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components/native';
-import Touchable from '@appandflow/touchable';
 import { connect } from 'react-redux';
 import { withApollo } from 'react-apollo';
 import { connectActionSheet } from '@expo/react-native-action-sheet';

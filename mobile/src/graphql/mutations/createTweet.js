@@ -7,6 +7,7 @@ mutation createTweet($text: String!) {
         _id
         createdAt
         text
+        isFavorited
         user {
             avatar
             username

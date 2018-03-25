@@ -91,6 +91,7 @@ class NewTweetScreen extends Component {
                     __typename: 'Tweet',
                     text: this.state.text,
                     favoriteCount: 0,
+                    isFavorited: false,
                     _id: Math.round(Math.random() * -1000000),
                     createdAt: new Date(),
                     user: {
