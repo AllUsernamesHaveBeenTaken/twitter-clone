@@ -21,4 +21,13 @@ const TweetSchema = new Schema(
   }
 );
 
+TweetSchema.statics = {
+  incFavoriteCount(tweetId) {
+    return this.findByIdAndUpdate(tweetId, { $inc: {favoriteCount: 1}}, {new: true});
+  },
+  decFavoriteCount(tweetId) {
+    return this.findByIdAndUpdate(tweetId, { $inc: {favoriteCount: -1}}, {new: true});    
+  }
+}
+
 export default mongoose.model('Tweet', TweetSchema);

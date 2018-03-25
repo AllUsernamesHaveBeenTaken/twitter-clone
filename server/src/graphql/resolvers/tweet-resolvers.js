@@ -2,6 +2,8 @@ import Tweet from '../../models/Tweet';
 import { requireAuth } from '../../services/auth';
 import { pubsub } from '../../config/pubsub';
 
+import FavoriteTweet from '../../models/FavoriteTweet';
+
 const TWEET_ADDED = 'tweetAdded';
 
 export default {
@@ -66,6 +68,16 @@ export default {
       };
     } catch (error) {
       throw error;
+    }
+  },
+  favoriteTweet: async (_, {_id}, {user}) => {
+    try {
+      await requireAuth(user);
+      const favorites = await FavoriteTweet.findOne({ userId: user._id});
+      
+      return favorites.userFavoritedTweet(_id);
+    } catch (error) {
+      return error;
     }
   },
   tweetAdded: {
