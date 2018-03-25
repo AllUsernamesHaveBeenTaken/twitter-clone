@@ -28,21 +28,19 @@ const ButtonText = styled.Text`
     color: ${ props => props.theme.LIGHT_GRAY };
 `;
 
-const isFavorited = false;
-
-function FeedCardBottom({favoriteCount, onFavoritePress }) {
+function FeedCardBottom({favoriteCount, onFavoritePress, isFavorited }) {
     return (
         <Root>
             <Button>
                 <SimpleLineIcons name='bubble' size={ICON_SIZE} color={colors.LIGHT_GRAY} />
                 <ButtonText>
-                    { favoriteCount }                    
+                    0                    
                 </ButtonText>
             </Button>
             <Button>
                 <Entypo name='retweet' size={ICON_SIZE} color={colors.LIGHT_GRAY} />
                 <ButtonText>
-                    { favoriteCount }
+                    0
                 </ButtonText>
             </Button>
             <Button onPress={onFavoritePress}>

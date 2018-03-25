@@ -3,6 +3,7 @@ import { requireAuth } from '../../services/auth';
 import { pubsub } from '../../config/pubsub';
 
 import FavoriteTweet from '../../models/FavoriteTweet';
+import { Promise } from 'mongoose';
 
 const TWEET_ADDED = 'tweetAdded';
 
@@ -18,6 +19,28 @@ export default {
   getTweets: async (_, args, { user }) => {
     try {
       await requireAuth(user);
+      const promise1 = Tweet.find({}).sort({ createdAt: -1 });
+      const promise2 = FavoriteTweet.findOne({ userId : user._id });
+      const [tweets, favorites] = await Promise.all([promise1, promise2]);
+
+      const tweetsToSend = tweets.reduce((arr, tweet) => {
+        const tweetJSON = tweet.toJSON();
+        if (favorites.tweets.some(t => t.equals(tweet._id))) {
+          arr.push({
+            ...tweetJSON,
+            isFavorited: true
+          })
+        } else {
+          arr.push({
+            ...tweetJSON,
+            isFavorited: false
+          })
+        }
+        return arr;
+      }, []);
+
+      return tweetsToSend;
+
       return Tweet.find({}).sort({ createdAt: -1 });
     } catch (error) {
       throw error;
