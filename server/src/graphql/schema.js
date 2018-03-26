@@ -61,6 +61,7 @@ export default `
 
     type Subscription {
         tweetAdded: Tweet
+        tweetFavorited: Tweet
     }
 
     schema {
